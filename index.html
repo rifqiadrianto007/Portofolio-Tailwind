@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
           <meta charset="UTF-8">
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -41,6 +41,20 @@
                                                                       </li>
                                                                       <li class="group">
                                                                                 <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary">Contact</a>
+                                                                      </li>
+                                                                      <li class="flex items-center pl-8">
+                                                                             <div class="flex justify-center">
+                                                                                    <span class="text-sm text-slate-500 mr-2">Light</span>
+                                                                                    <input type="checkbox" id="dark-toggle" class="hidden" />
+                                                                                    <label for="toggle">
+                                                                                      <div
+                                                                                        class="w-9 h-5 bg-slate-500 rounded-full flex items-center p-1 cursor-pointer"
+                                                                                      >
+                                                                                        <div class="w-4 h-4 bg-white rounded-full toggle-circle"></div>
+                                                                                      </div>
+                                                                                    </label>
+                                                                                    <span class="text-sm text-slate-500 ml-2">Dark</span>
+                                                                                  </div>
                                                                       </li>
                                                             </ul>
                                                   </nav>
@@ -504,6 +518,12 @@
                      </div>
                  </footer>
                  <!-- Footer End -->
+
+                 <!-- Back to Top Start  -->
+                  <a href="#home" id="to-top" class="hidden fixed z-[9999] justify-center items-center bottom-4 right-4 h-14 w-14 bg-primary rounded-full p-4 hover:animate-pulse">
+                     <span class="block w-5 h-5 border-t-2 border-l-2 rotate-45 mt-2"></span>
+                  </a>
+                  <!-- Back yo To End -->
 
 <script src="src/js/script.js"></script>
 </body>
