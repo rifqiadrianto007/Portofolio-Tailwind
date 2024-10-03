@@ -5,6 +5,13 @@
           <meta name="viewport" content="width=device-width, initial-scale=1.0">
           <title>Portofolio Rifqi Adrianto</title>
           <link rel="stylesheet" href="src/style.css">
+          <script>
+              if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+                     document.documentElement.classList.add('dark')
+                   } else {
+                     document.documentElement.classList.remove('dark')
+                   }
+          </script>
 </head>
 <body>
          <!-- Header Start -->
@@ -42,7 +49,7 @@
                                                                       <li class="group">
                                                                                 <a href="#contact" class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
                                                                       </li>
-                                                                      <li class="flex items-center pl-8 mt-3">
+                                                                      <li class="flex items-center pl-8 mt-3 lg:mt-0">
                                                                              <div class="flex">
                                                                                     <span class="mr-2 text-sm text-slate-500">Light</span>
                                                                                     <input type="checkbox" class="hidden" id="dark-toggle" />
@@ -378,12 +385,12 @@
               <!-- Experience End -->
 
               <!-- Contact Start -->
-              <section id="contact" class="pt-36 pb-32">
+              <section id="contact" class="pt-36 pb-32 dark:bg-slate-800">
                      <div class="container">
                                <div class="w-full px-4">
                                          <div class="max-w-xl mx-auto text-center mb-16">
                                                    <h4 class="font-semibold text-lg text-primary mb-2">Contact</h4>
-                                                   <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl">Hubungi Saya</h2>
+                                                   <h2 class="font-bold text-dark text-3xl mb-4 sm:text-4xl lg:text-5xl dark:text-white">Hubungi Saya</h2>
                                                    <p class="font-medium text-md text-secondary md:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor, tempora facilis.</p>
                                          </div>
                                </div>
