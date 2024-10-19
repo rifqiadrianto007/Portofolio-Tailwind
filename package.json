@@ -9,6 +9,9 @@
   "author": "",
   "license": "ISC",
   "description": "",
+  "plugins": [
+    "prettier-plugin-tailwindcss"
+  ],
   "devDependencies": {
     "daisyui": "^4.12.13",
     "prettier": "^3.3.3",
