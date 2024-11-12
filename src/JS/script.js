@@ -56,3 +56,14 @@ if (
 } else {
   darkToggle.checked = false;
 }
+
+// Contact Us to WhatsApp
+function sendMessage() {
+    const name = document.getElementById('nama').value;
+    const email = document.getElementById('email').value;
+    const pesan = document.getElementById('pesan').value;
+
+    const url = "https://web.whatsapp.com/send?phone=6282332061664&text=Hallo%20Rifqi%2C%20%0ASaya%20*"+ name +"*%20dengan%"+ email +"%20*email*.%0A%0A*"+ pesan +"*";
+
+    window.open(url);
+}
