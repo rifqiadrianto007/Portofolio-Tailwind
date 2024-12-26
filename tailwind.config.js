@@ -26,14 +26,10 @@ module.exports = {
       screens : {
         '2xl' : '1320px',
       },
-      ratio : {
-        'ratio' : 'aspect-w-16 aspect-h-9'
-      },
     },
   },
   plugins: [
-    require('daisyui'),
-    require('@tailwindcss/aspect-ratio'),
+    require('daisyui')
   ],
 };
 
