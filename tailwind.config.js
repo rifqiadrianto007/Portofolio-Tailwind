@@ -8,6 +8,12 @@ module.exports = {
       padding : '16px',
     },
     extend: {
+        spacing : {
+            '-20' : '-20px'
+        },
+        backdropBlur : {
+            md : '8px'
+        },
       colors : {
         primary : '#3b82f6',
         secondary : '#64748b',

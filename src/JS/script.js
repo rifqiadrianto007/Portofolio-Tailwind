@@ -67,3 +67,19 @@ function sendMessage() {
 
     window.open(url);
 }
+
+function showPopup(id) {
+    const popup = document.getElementById(id);
+    if (popup) {
+        popup.classList.remove('hidden');
+        popup.classList.add('flex');
+    }
+}
+
+function hidePopup(id) {
+    const popup = document.getElementById(id);
+    if (popup) {
+        popup.classList.add('hidden');
+        popup.classList.remove('flex');
+    }
+}
