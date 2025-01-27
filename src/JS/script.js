@@ -76,10 +76,9 @@ function showPopup(id) {
     }
 }
 
-function hidePopup(id) {
-    const popup = document.getElementById(id);
+function hidePopup(popupId) {
+    const popup = document.getElementById(popupId);
     if (popup) {
         popup.classList.add('hidden');
-        popup.classList.remove('flex');
     }
 }
