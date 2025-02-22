@@ -82,3 +82,9 @@ function hidePopup(popupId) {
         popup.classList.add('hidden');
     }
 }
+
+window.onload = () => {
+    const scrollContainer = document.getElementById('scroll-container');
+    const firstChild = scrollContainer.firstElementChild.cloneNode(true);
+    scrollContainer.appendChild(firstChild);
+};

@@ -30,3 +30,15 @@ body {
 #dark-toggle:checked ~ label div.toggle-circle {
           @apply translate-x-3;
 }
+
+.animate-scroll {
+    animation: scroll-horizontal 30s linear infinite;
+}
+@keyframes scroll-horizontal {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
