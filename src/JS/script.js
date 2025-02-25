@@ -83,8 +83,26 @@ function hidePopup(popupId) {
     }
 }
 
-window.onload = () => {
-    const scrollContainer = document.getElementById('scroll-container');
-    const firstChild = scrollContainer.firstElementChild.cloneNode(true);
-    scrollContainer.appendChild(firstChild);
-};
+const slider = document.getElementById('imageSlider');
+let speed = 50; // Kecepatan gerak slider (semakin kecil angkanya, semakin cepat)
+
+function startSlider() {
+    const firstElement = slider.firstElementChild;
+    const sliderWidth = firstElement.offsetWidth;
+
+    slider.appendChild(firstElement.cloneNode(true));
+
+    let position = 0;
+    function moveSlider() {
+        position -= 1;
+        if (Math.abs(position) >= sliderWidth) {
+            position = 0;
+        }
+        slider.style.transform = `translateX(${position}px)`;
+        requestAnimationFrame(moveSlider);
+    }
+
+    moveSlider();
+}
+
+window.onload = startSlider;
