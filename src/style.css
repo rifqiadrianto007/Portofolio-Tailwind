@@ -1233,54 +1233,30 @@ body {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.animate-scroll {
+.logo {
   display: flex;
-  animation: scroll-horizontal 30s linear infinite;
-  white-space: nowrap;
+  gap: 3rem;
+  padding: 1rem;
+  animation: infinite-scroll 15s linear infinite;
+  flex-shrink: 0;
 }
 
-@keyframes scroll-horizontal {
-  0% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-100%);
-  }
-}
-
-.marquee-container {
-  position: relative;
+.logo-container {
   overflow: hidden;
-  white-space: nowrap;
-  width: 100%;
-}
-
-.marquee-content {
   display: flex;
-  gap: 2rem;
-  animation: scroll-left 20s linear infinite;
-  min-width: 200%;
 }
 
-.marquee-content img {
-  width: 100px;
-  height: auto;
-  opacity: 0.6;
-  transition: opacity 0.3s;
+.logo img {
+  height: 3rem;
 }
 
-.marquee-content img:hover {
-  opacity: 1;
-}
-
-@keyframes scroll-left {
+@keyframes infinite-scroll {
   from {
     transform: translateX(0);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 
