@@ -50,11 +50,18 @@ body {
     overflow: hidden;
     width: 100%;
     white-space: nowrap;
+    display: flex;
 }
 
 .marquee-content {
-    display: inline-block;
+    display: flex;
     animation: scroll-left 20s linear infinite;
+    min-width: 200%; /* Memastikan dua set ikon agar looping mulus */
+}
+
+.marquee-content .icons {
+    display: flex;
+    gap: 2rem;
 }
 
 @keyframes scroll-left {
@@ -62,6 +69,6 @@ body {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
