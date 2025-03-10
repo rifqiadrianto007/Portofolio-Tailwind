@@ -1252,29 +1252,34 @@ body {
 .marquee-container {
   position: relative;
   overflow: hidden;
-  width: 100%;
   white-space: nowrap;
-  display: flex;
+  width: 100%;
 }
 
 .marquee-content {
   display: flex;
+  gap: 2rem;
   animation: scroll-left 20s linear infinite;
   min-width: 200%;
-  /* Memastikan dua set ikon agar looping mulus */
 }
 
-.marquee-content .icons {
-  display: flex;
-  gap: 2rem;
+.marquee-content img {
+  width: 100px;
+  height: auto;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.marquee-content img:hover {
+  opacity: 1;
 }
 
 @keyframes scroll-left {
-  0% {
+  from {
     transform: translateX(0);
   }
 
-  100% {
+  to {
     transform: translateX(-50%);
   }
 }
