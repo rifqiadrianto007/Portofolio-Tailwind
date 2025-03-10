@@ -44,10 +44,6 @@ body {
     display: flex;
 }
 
-.logo img {
-    height: 3rem;
-}
-
 @keyframes infinite-scroll {
     from {
         transform: translateX(0);
