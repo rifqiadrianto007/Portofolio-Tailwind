@@ -33,29 +33,49 @@ window.addEventListener("click", function (e) {
 });
 
 // Dark Mode Toggle
-const darkToggle = document.querySelector("#dark-toggle");
-const html = document.querySelector("html");
+let darkmode = localStorage.getItem('darkmode')
+const themeSwitch = document.getElementById('theme-switch')
 
-darkToggle.addEventListener("click", function () {
-  if (darkToggle.checked) {
-    html.classList.add("dark");
-    localStorage.theme = "dark";
-  } else {
-    html.classList.remove("dark");
-    localStorage.theme = "light";
-  }
-});
-
-//  Pindahkan Posisi Toggle Sesuai Mode
-if (
-  localStorage.theme === "dark" ||
-  (!("theme" in localStorage) &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches)
-) {
-  darkToggle.checked = true;
-} else {
-  darkToggle.checked = false;
+const enableDarkmode = () => {
+    document.body.classList.add('darkmode')
+    localStorage.setItem('darkmode', 'active')
 }
+
+const disableDarkmode = () => {
+    document.body.classList.remove('darkmode')
+    localStorage.setItem('darkmode', null)
+}
+
+if(darkmode === "active") enableDarkmode()
+
+themeSwitch.addEventListener("click", () => {
+    darkmode = localStorage.getItem('darkmode')
+    darkmode != "active" ? enableDarkmode() : disableDarkmode()
+})
+
+// const darkToggle = document.querySelector("#dark-toggle");
+// const html = document.querySelector("html");
+
+// darkToggle.addEventListener("click", function () {
+//   if (darkToggle.checked) {
+//     html.classList.add("dark");
+//     localStorage.theme = "dark";
+//   } else {
+//     html.classList.remove("dark");
+//     localStorage.theme = "light";
+//   }
+// });
+
+// //  Pindahkan Posisi Toggle Sesuai Mode
+// if (
+//   localStorage.theme === "dark" ||
+//   (!("theme" in localStorage) &&
+//     window.matchMedia("(prefers-color-scheme: dark)").matches)
+// ) {
+//   darkToggle.checked = true;
+// } else {
+//   darkToggle.checked = false;
+// }
 
 // Contact Us to WhatsApp
 function sendMessage() {
