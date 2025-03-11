@@ -52,3 +52,14 @@ body {
         transform: translateX(-100%);
     }
 }
+
+#theme-switch {
+    height: 50px;
+    width: 50px;
+    padding: 0;
+    border-radius: 50%;
+    background-color: ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
