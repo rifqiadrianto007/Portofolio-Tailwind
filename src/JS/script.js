@@ -33,25 +33,30 @@ window.addEventListener("click", function (e) {
 });
 
 // Dark Mode Toggle
-let darkmode = localStorage.getItem('darkmode')
-const themeSwitch = document.getElementById('theme-switch')
+const themeSwitch = document.getElementById('theme-switch');
 
-const enableDarkmode = () => {
-    document.body.classList.add('darkmode')
-    localStorage.setItem('darkmode', 'active')
+const enableDarkMode = () => {
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('darkmode', 'active');
+};
+
+const disableDarkMode = () => {
+    document.documentElement.classList.remove('dark');
+    localStorage.setItem('darkmode', 'inactive');
+};
+
+// Cek status dark mode dari localStorage saat halaman dimuat
+if (localStorage.getItem('darkmode') === 'active') {
+    enableDarkMode();
 }
 
-const disableDarkmode = () => {
-    document.body.classList.remove('darkmode')
-    localStorage.setItem('darkmode', null)
-}
-
-if(darkmode === "active") enableDarkmode()
-
-themeSwitch.addEventListener("click", () => {
-    darkmode = localStorage.getItem('darkmode')
-    darkmode != "active" ? enableDarkmode() : disableDarkmode()
-})
+themeSwitch.addEventListener('click', () => {
+    if (document.documentElement.classList.contains('dark')) {
+        disableDarkMode();
+    } else {
+        enableDarkMode();
+    }
+});
 
 // const darkToggle = document.querySelector("#dark-toggle");
 // const html = document.querySelector("html");

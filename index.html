@@ -7,13 +7,13 @@
     <title>Rifqi Adrianto Portfolio</title>
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-    <script>
+    <!-- <script>
         if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
             document.documentElement.classList.add('dark');
         } else {
             document.documentElement.classList.remove('dark');
         }
-    </script>
+    </script> -->
 </head>
 
 <body class="bg-white">
@@ -62,9 +62,11 @@
                                     class="text-base text-dark py-2 mx-8 flex group-hover:text-primary dark:text-white">Contact</a>
                             </li>
                             <li>
-                                <button id="theme-switch">
-                                    <img src="/src/img/dark_mode.svg" alt="darkMode">
-                                    <img src="/src/img/light_mode.svg" alt="lightMode">
+                                <button id="theme-switch"
+                                    class="h-12 w-12 flex items-center justify-center rounded-full bg-white dark:bg-gray-800 fixed top-5 right-5 shadow-md transition">
+                                    <img src="/src/img/dark_mode.svg" alt="Dark Mode" class="w-6 h-6 block dark:hidden">
+                                    <img src="/src/img/light_mode.svg" alt="Light Mode"
+                                        class="w-6 h-6 hidden dark:block">
                                 </button>
                             </li>
                             <!-- <li class="flex items-center pl-8 mt-3 lg:mt-0">
