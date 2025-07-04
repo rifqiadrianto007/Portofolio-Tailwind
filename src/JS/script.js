@@ -87,3 +87,47 @@ function hidePopup(popupId) {
 const logo = document.querySelector(".logo").cloneNode(true);
 
 document.querySelector('.logo-container').append(logo);
+
+// Function to truncate text to first 5 words
+        function truncateToWords(text, wordCount = 5) {
+            const words = text.trim().split(/\s+/);
+            if (words.length <= wordCount) {
+                return text;
+            }
+            return words.slice(0, wordCount).join(' ') + '...';
+        }
+
+        // Function to get text from popup
+        function getPopupText(popupId) {
+            const popup = document.getElementById(popupId);
+            if (popup) {
+                const textElement = popup.querySelector('p.text-justify');
+                if (textElement) {
+                    return textElement.textContent.trim();
+                }
+            }
+            return '';
+        }
+
+        // Function to initialize card descriptions
+        function initializeCardDescriptions() {
+            const cardDescriptions = document.querySelectorAll('.card-description');
+            
+            cardDescriptions.forEach(description => {
+                const popupTarget = description.getAttribute('data-popup-target');
+                if (popupTarget) {
+                    const fullText = getPopupText(popupTarget);
+                    if (fullText) {
+                        const truncatedText = truncateToWords(fullText, 5);
+                        description.textContent = truncatedText;
+                    }
+                }
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', initializeCardDescriptions);
+
+        function showPopup(popupId) {
+            document.getElementById(popupId).classList.remove('hidden');
+            document.getElementById(popupId).classList.add('flex');
+        }
