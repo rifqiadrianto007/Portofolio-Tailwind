@@ -1,39 +1,38 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['index.html'],
-  darkMode : 'class',
+  content: ['./index.html', './src/**/*.{html,js,ts,jsx,tsx,vue,php,blade.php}'],
+  darkMode: 'class',
   theme: {
-    container : {
-      center : true,
-      padding : '16px',
+    container: {
+      center: true,
+      padding: '16px',
     },
     extend: {
-        spacing : {
-            '-20' : '-20px'
-        },
-        backdropBlur : {
-            md : '8px'
-        },
-      colors : {
-        primary : '#3b82f6',
-        secondary : '#64748b',
-        dark : '#0f172a',
-        animation: {
-          'spin-slow': 'spin 3s linear infinite',
-          'goyang': 'goyang 1s ease-in-out infinite'
-        },
-        keyframes: {
-          goyang: {
-            '0%, 100%' : {transform: 'rotate (-3deg)'},
-            '50%': {transform: 'rotate(3deg)'},
-          },
+      spacing: {
+        '-20': '-20px',
+      },
+      backdropBlur: {
+        md: '8px',
+      },
+      colors: {
+        primary: '#3b82f6',
+        secondary: '#64748b',
+        dark: '#0f172a',
+      },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'goyang': 'goyang 1s ease-in-out infinite',
+      },
+      keyframes: {
+        goyang: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
         },
       },
-      screens : {
-        '2xl' : '1320px',
+      screens: {
+        '2xl': '1320px',
       },
     },
   },
   plugins: [],
 };
-
